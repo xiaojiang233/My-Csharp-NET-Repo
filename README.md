@@ -1,1 +1,1 @@
-# Csharp
+# NeteaseNameGenerator
