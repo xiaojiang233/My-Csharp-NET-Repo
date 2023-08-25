@@ -69,9 +69,11 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(236, 166);
+            this.textBox1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox1.Location = new System.Drawing.Point(236, 175);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
+            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBox1.Size = new System.Drawing.Size(221, 130);
             this.textBox1.TabIndex = 3;
             // 
@@ -89,7 +91,7 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button3.Location = new System.Drawing.Point(16, 237);
+            this.button3.Location = new System.Drawing.Point(16, 250);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(214, 46);
             this.button3.TabIndex = 5;
@@ -102,9 +104,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(469, 308);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.webBrowser1);

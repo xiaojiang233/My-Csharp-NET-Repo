@@ -82,9 +82,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="1.txt" />
-    <Content Include="2.txt" />
-    <Content Include="3.txt" />
+    <EmbeddedResource Include="1.txt" />
+    <EmbeddedResource Include="2.txt" />
+    <EmbeddedResource Include="3.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

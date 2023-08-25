@@ -87,31 +87,45 @@ namespace NeteaseNameGenerator
 
         private void button3_Click(object sender, EventArgs e)
         {
-            int position1 = 1;
-            int position2 = 2;
-            int position3 = 3;
+            Random random = new Random();
 
-            string word1 = ReadWordFromFile(position1);
-            string word2 = ReadWordFromFile(position2);
-            string word3 = ReadWordFromFile(position3);
+            string word1 = GetRandomWordFromEmbeddedResource("1.txt");
+            string word2 = GetRandomWordFromEmbeddedResource("2.txt");
+            string word3 = GetRandomWordFromEmbeddedResource("3.txt");
 
             string result = word1 + word2 + word3;
 
             textBox1.Text += Environment.NewLine + result;
+
+
+
+
+
         }
-        private string ReadWordFromFile(int position)
+        private string GetRandomWordFromEmbeddedResource(string resourceName)
         {
-            string filePath = $"{position}.txt";
-            if (File.Exists(filePath))
+            Random random = new Random();
+
+            string[] words = ReadEmbeddedResource(resourceName).Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
+            int randomIndex = random.Next(0, words.Length);
+            return words[randomIndex];
+        }
+        private string ReadEmbeddedResource(string resourceName)
+        {
+            Assembly assembly = Assembly.GetExecutingAssembly();
+            string fullResourceName = assembly.GetName().Name + "." + resourceName;
+
+            using (Stream stream = assembly.GetManifestResourceStream(fullResourceName))
             {
-                string[] fileContent = File.ReadAllLines(filePath);
-                if (fileContent.Length > 0)
+                using (StreamReader reader = new StreamReader(stream))
                 {
-                    return fileContent[0];
+                    return reader.ReadToEnd();
                 }
             }
-            return string.Empty;
         }
+
+
+
     }
-    
+
 }
