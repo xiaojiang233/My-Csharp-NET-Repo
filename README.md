@@ -1,1 +1,1 @@
-# NeteaseNameGenerator
+# My C# Repo
